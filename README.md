@@ -1,33 +1,23 @@
-# react-native-sf-image-zoom-viewer
+# react-native-sf-net
 
-# 图片查看器，支持手势缩放、分享
+# 网络请求post、get 网络状态检查
 
 # 安装
-> npm install react-native-sf-image-zoom-viewer
+> npm install react-native-sf-net
 
 # 例子
 ```
-import SFZoomView from 'react-native-sf-image-zoom-viewer';
-export default class App extends React.Component {
-  show=()=>{
-    
-  }
-  render(){
-    return(
-      <View style={{flex:1,}}>
-        ...
-        ...
-        <SFZoomView ref={(ref)=>{this.zoomViewer = ref}}/>
-      </View>
-    )
-  }
-}
+import SFNet from 'react-native-sf-net';
 
+//统一配置服务器地址
+SFNet.config('你的服务器地址')
+
+SFNet.post('你的接口',params,(data)=>{} (err)=>{})
 ```
 
-# Props
-|  parameter  |  type  |  required  |   description  |  default  |
+# Methods
+|  Methods  |  Params  |  Param Types  |   description  |  Example  |
 |:-----|:-----|:-----|:-----|:-----|
-|isShowAni|boolean|no|是否显示展示动画|true|
-|isShowShare|boolean|no|是否显示分享按钮|true|
-|onShare|function<br>()=>(index)=>{}|no|点击分享事件|()=>null|
+|checkNet|function<br>(isConnect)=>{}|func|检测网络状态||
+|get|url/params/suc/fail|string/object/func/func|get请求||
+|post|url/params/suc/fail|string/object/func/func|post请求||
